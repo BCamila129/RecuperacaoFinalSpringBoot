@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Produto {
+public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,7 +15,7 @@ public class Produto {
     @OneToMany
     List<Cliente> clienteList;
 
-    public Produto(){
+    public Pedido(){
 
     }
 
@@ -27,7 +27,7 @@ public class Produto {
         this.clienteList = clienteList;
     }
 
-    public Produto(String nome, Double precoIndividual, Integer quantidade,List<Cliente> clienteList) {
+    public Pedido(String nome, Double precoIndividual, Integer quantidade, List<Cliente> clienteList) {
         this.nome = nome;
         this.precoIndividual = precoIndividual;
         this.quantidade = quantidade;
