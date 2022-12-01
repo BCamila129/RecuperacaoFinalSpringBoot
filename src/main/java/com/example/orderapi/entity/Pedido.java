@@ -12,19 +12,11 @@ public class Pedido {
     private String nome;
     private Double precoIndividual;
     private Integer quantidade;
-    @OneToMany
+    @ManyToMany
     List<Cliente> clienteList;
 
-    public Pedido(){
+    public Pedido() {
 
-    }
-
-    public List<Cliente> getClienteList() {
-        return clienteList;
-    }
-
-    public void setClienteList(List<Cliente> clienteList) {
-        this.clienteList = clienteList;
     }
 
     public Pedido(String nome, Double precoIndividual, Integer quantidade, List<Cliente> clienteList) {
@@ -60,5 +52,13 @@ public class Pedido {
 
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public List<Cliente> getClienteList() {
+        return clienteList;
+    }
+
+    public void setClienteList(List<Cliente> clienteList) {
+        this.clienteList = clienteList;
     }
 }

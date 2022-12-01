@@ -18,25 +18,36 @@ public class Controller {
     public Cliente salvar(@RequestBody Cliente cliente) {
         Cliente clienteSaved = clienteRepository.save(cliente);
         return clienteSaved;
-}
-    @GetMapping("/order/v1/")
+    }
+
+    @GetMapping("/order/v1/{id}")
     @ResponseBody
     public Optional<Cliente> getClienteById(@PathVariable Long id) {
         Optional<Cliente> clienteReturned = clienteRepository.findById(id);
         return clienteReturned;
     }
-    @DeleteMapping("{id}")
-    public String deleteClienteById(@PathVariable Long id){
+
+    @DeleteMapping("order/v1/{id}")
+    public String deleteClienteById(@PathVariable Long id) {
         Optional<Cliente> clienteOptional = clienteRepository.findById(id);
-        if(clienteOptional.isPresent()){
+        if (clienteOptional.isPresent()) {
             clienteRepository.deleteById(id);
             return "Cliente" + id + " apagado com sucesso";
-        }else{
+        } else {
             return "Cliente não encontrado!";
         }
+    }
 
     @PutMapping("update/order/v1")
-    public Cliente
+    public String updateClienteById(@PathVariable Long id) {
+        Optional<Cliente> clienteOptional = clienteRepository.findById(id);
+        if (clienteOptional.isPresent()) {
+            Cliente i = clienteOptional.get();
+            clienteRepository.save(i);
+            return "Cliente" + id + " salvo com sucesso!";
+        } else {
+            return "Cliente não encontrado";
+        }
+    }
 
 }
-

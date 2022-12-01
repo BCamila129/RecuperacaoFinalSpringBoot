@@ -1,9 +1,6 @@
 package com.example.orderapi.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Cliente {
@@ -11,19 +8,26 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(nullable = false, unique = true, length = 30)
     private String endereco;
+
+    @Column(nullable = false, unique = true, length = 10)
     private String cep;
+
+    @Column(nullable = false, unique = true, length = 10)
     private String numero;
+
+    @Column(nullable = false, unique = true, length = 15)
     private String formaPagamento;
     private Integer parcelas;
     private Double valorTotal;
 
-    public Cliente(){
+    public Cliente() {
 
     }
 
-    public Cliente(Long id, String endereco, String cep, String numero, String formaPagamento, Integer parcelas, Double valorTotal) {
-        this.id = id;
+    public Cliente(String endereco, String cep, String numero, String formaPagamento, Integer parcelas, Double valorTotal) {
         this.endereco = endereco;
         this.cep = cep;
         this.numero = numero;
