@@ -12,7 +12,6 @@ public class Pedido {
     private String nome;
     private Double precoIndividual;
     private Integer quantidade;
-
     @ManyToMany
     List<Cliente> clienteList;
 

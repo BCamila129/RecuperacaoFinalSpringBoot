@@ -5,7 +5,11 @@ import com.example.orderapi.entity.Cliente;
 import com.example.orderapi.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping(value = "/order/v1")
@@ -23,15 +27,19 @@ public class Controller {
         Cliente clienteSaved = clienteRepository.save(cliente);
         return clienteSaved;
     }
+    @GetMapping
+    public List<Cliente> getAllCliente() {
+        return clienteRepository.findAll();
+    }
 
-    @GetMapping("/order/v1/{id}")
+    @GetMapping("/{id}")
     @ResponseBody
     public Optional<Cliente> getClienteById(@PathVariable Long id) {
         Optional<Cliente> clienteReturned = clienteRepository.findById(id);
         return clienteReturned;
     }
 
-    @DeleteMapping("order/v1/{id}")
+    @DeleteMapping("{id}")
     public String deleteClienteById(@PathVariable Long id) {
         Optional<Cliente> clienteOptional = clienteRepository.findById(id);
         if (clienteOptional.isPresent()) {
@@ -42,7 +50,7 @@ public class Controller {
         }
     }
 
-    @PutMapping("update/order/v1")
+    @PutMapping("update/{id}")
     public String updateClienteById(@PathVariable Long id) {
         Optional<Cliente> clienteOptional = clienteRepository.findById(id);
         if (clienteOptional.isPresent()) {
@@ -53,5 +61,6 @@ public class Controller {
             return "Cliente não encontrado";
         }
     }
+
 
 }

@@ -8,17 +8,9 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column(nullable = false, unique = true, length = 30)
     private String endereco;
-
-    @Column(nullable = false, unique = true, length = 10)
     private String cep;
-
-    @Column(nullable = false, unique = true, length = 10)
     private String numero;
-
-    @Column(nullable = false, unique = true, length = 15)
     private String formaPagamento;
     private Integer parcelas;
     private Double valorTotal;
