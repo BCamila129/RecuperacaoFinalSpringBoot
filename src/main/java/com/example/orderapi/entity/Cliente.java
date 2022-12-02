@@ -15,7 +15,7 @@ public class Cliente {
     private String formaPagamento;
     private Integer parcelas;
     private Double valorTotal;
-    @OneToMany
+    @ManyToMany
     List<Pedido> list;
 
     public Cliente() {

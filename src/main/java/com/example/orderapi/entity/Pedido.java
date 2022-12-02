@@ -1,7 +1,7 @@
 package com.example.orderapi.entity;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 public class Pedido {
