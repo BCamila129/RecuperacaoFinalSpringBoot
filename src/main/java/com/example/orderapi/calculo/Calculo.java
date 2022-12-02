@@ -15,13 +15,6 @@ public class Calculo {
             cliente.setValorTotal(numeroParcelas);
             return cliente;
         }
-//        else if(numeroParcelas = (cliente.getParcelas() != "Cartao")){
-//            return "Não é possível prosseguir";
-//        }
-//
-
         return cliente;
     }
-
-
 }
