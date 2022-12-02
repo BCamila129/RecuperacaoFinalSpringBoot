@@ -15,11 +15,24 @@ public class Cliente {
     private String formaPagamento;
     private Integer parcelas;
     private Double valorTotal;
+    private String itens;
     @ManyToMany
     List<Pedido> list;
 
     public Cliente() {
 
+    }
+
+    public Cliente(String itens) {
+        this.itens = itens;
+    }
+
+    public String getItens() {
+        return itens;
+    }
+
+    public void setItens(String itens) {
+        this.itens = itens;
     }
 
     public Cliente(String endereco, String cep, String numero, String formaPagamento, Integer parcelas, Double valorTotal, List<Pedido> list) {

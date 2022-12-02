@@ -8,7 +8,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping(value = "/order/v1")
+@RequestMapping(path = "/order/v1")
 public class Controller {
 
     @Autowired
