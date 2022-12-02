@@ -40,7 +40,7 @@ public class Cliente {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco() {
         this.endereco = endereco;
     }
 
@@ -48,7 +48,7 @@ public class Cliente {
         return cep;
     }
 
-    public void setCep(String cep) {
+    public void setCep() {
         this.cep = cep;
     }
 

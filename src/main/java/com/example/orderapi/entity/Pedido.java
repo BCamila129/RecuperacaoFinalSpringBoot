@@ -33,7 +33,7 @@ public class Pedido {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome() {
         this.nome = nome;
     }
 
@@ -41,7 +41,7 @@ public class Pedido {
         return precoIndividual;
     }
 
-    public void setPrecoIndividual(Double precoIndividual) {
+    public void setPrecoIndividual() {
         this.precoIndividual = precoIndividual;
     }
 
@@ -49,7 +49,7 @@ public class Pedido {
         return precoTotal;
     }
 
-    public void setPrecoTotal(Double precoTotal) {
+    public void setPrecoTotal() {
         this.precoTotal = precoTotal;
     }
 
@@ -57,7 +57,7 @@ public class Pedido {
         return quantidade;
     }
 
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade() {
         this.quantidade = quantidade;
     }
 }

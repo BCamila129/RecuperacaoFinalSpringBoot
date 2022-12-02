@@ -7,11 +7,11 @@ public class Calculo {
     public Cliente calculado(Cliente cliente) {
         Double numeroParcelas;
         if (cliente.getParcelas() > 10) {
-            numeroParcelas = Double.valueOf(cliente.getParcelas() * (10 / 100));
+            numeroParcelas = Double.valueOf(cliente.getParcelas() + (10 / 100));
             cliente.setValorTotal(numeroParcelas);
             return cliente;
         } else if (cliente.getParcelas() > 20) {
-            numeroParcelas = Double.valueOf((cliente.getParcelas() * (20 / 100)));
+            numeroParcelas = Double.valueOf((cliente.getParcelas() + (20 / 100)));
             cliente.setValorTotal(numeroParcelas);
             return cliente;
         }
