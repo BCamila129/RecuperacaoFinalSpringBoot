@@ -11,6 +11,7 @@ public class Pedido {
     private Long id;
     private String nome;
     private Double precoIndividual;
+    private Double precoTotal;
     private Integer quantidade;
     @ManyToMany
     List<Cliente> clienteList;
@@ -18,8 +19,18 @@ public class Pedido {
     public Pedido() {
 
     }
+    
 
-    public Pedido(String nome, Double precoIndividual, Integer quantidade, List<Cliente> clienteList) {
+    public Double getPrecoTotal() {
+        return precoTotal;
+    }
+
+    public void setPrecoTotal(Double precoTotal) {
+        this.precoTotal = precoTotal;
+    }
+
+    public Pedido(String nome, Double precoIndividual, Integer quantidade,Double precoTotal, List<Cliente> clienteList) {
+        this.precoTotal = precoTotal;
         this.nome = nome;
         this.precoIndividual = precoIndividual;
         this.quantidade = quantidade;
