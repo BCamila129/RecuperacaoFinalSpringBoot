@@ -1,15 +1,12 @@
 package com.example.orderapi.controller;
-
 import com.example.orderapi.calculo.Calculo;
 import com.example.orderapi.entity.Cliente;
 import com.example.orderapi.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping(value = "/order/v1")

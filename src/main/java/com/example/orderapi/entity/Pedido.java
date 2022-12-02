@@ -13,28 +13,16 @@ public class Pedido {
     private Double precoIndividual;
     private Double precoTotal;
     private Integer quantidade;
-    @ManyToMany
-    List<Cliente> clienteList;
 
     public Pedido() {
 
     }
-    
 
-    public Double getPrecoTotal() {
-        return precoTotal;
-    }
-
-    public void setPrecoTotal(Double precoTotal) {
-        this.precoTotal = precoTotal;
-    }
-
-    public Pedido(String nome, Double precoIndividual, Integer quantidade,Double precoTotal, List<Cliente> clienteList) {
-        this.precoTotal = precoTotal;
+    public Pedido(String nome, Double precoIndividual, Double precoTotal, Integer quantidade) {
         this.nome = nome;
         this.precoIndividual = precoIndividual;
+        this.precoTotal = precoTotal;
         this.quantidade = quantidade;
-        this.clienteList = clienteList;
     }
 
     public Long getId() {
@@ -57,19 +45,19 @@ public class Pedido {
         this.precoIndividual = precoIndividual;
     }
 
+    public Double getPrecoTotal() {
+        return precoTotal;
+    }
+
+    public void setPrecoTotal(Double precoTotal) {
+        this.precoTotal = precoTotal;
+    }
+
     public Integer getQuantidade() {
         return quantidade;
     }
 
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public List<Cliente> getClienteList() {
-        return clienteList;
-    }
-
-    public void setClienteList(List<Cliente> clienteList) {
-        this.clienteList = clienteList;
     }
 }

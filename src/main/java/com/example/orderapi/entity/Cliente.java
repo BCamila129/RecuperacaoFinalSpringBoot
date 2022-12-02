@@ -1,6 +1,7 @@
 package com.example.orderapi.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Cliente {
@@ -14,18 +15,21 @@ public class Cliente {
     private String formaPagamento;
     private Integer parcelas;
     private Double valorTotal;
+    @OneToMany
+    List<Pedido> list;
 
     public Cliente() {
 
     }
 
-    public Cliente(String endereco, String cep, String numero, String formaPagamento, Integer parcelas, Double valorTotal) {
+    public Cliente(String endereco, String cep, String numero, String formaPagamento, Integer parcelas, Double valorTotal, List<Pedido> list) {
         this.endereco = endereco;
         this.cep = cep;
         this.numero = numero;
         this.formaPagamento = formaPagamento;
         this.parcelas = parcelas;
         this.valorTotal = valorTotal;
+        this.list = list;
     }
 
     public Long getId() {
@@ -78,5 +82,13 @@ public class Cliente {
 
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public List<Pedido> getList() {
+        return list;
+    }
+
+    public void setList(List<Pedido> list) {
+        this.list = list;
     }
 }
