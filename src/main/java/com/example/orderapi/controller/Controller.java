@@ -1,5 +1,4 @@
 package com.example.orderapi.controller;
-import com.example.orderapi.calculo.Calculo;
 import com.example.orderapi.entity.Cliente;
 import com.example.orderapi.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +13,10 @@ public class Controller {
 
     @Autowired
     private ClienteRepository clienteRepository;
-    @Autowired
-    private Calculo calculado;
 
     @PostMapping
     @ResponseBody
     public Cliente salvar(@RequestBody Cliente cliente) {
-        Cliente cliente1 = calculado.calculado(cliente);
         Cliente clienteSaved = clienteRepository.save(cliente);
         return clienteSaved;
     }
